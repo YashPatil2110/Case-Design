@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Product Gallery - Filter</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<section>
+		<ul>
+			<li class="list active" data-filter="all">All</li>
+			<li class="list" data-filter="livingroom">Living Room</li>
+			<li class="list" data-filter="bedroom">Bed Room</li>
+			<li class="list" data-filter="kitchen">Kitchen</li>
+			<li class="list" data-filter="bathroom">Bathroom</li>
+		</ul>
+		<div class="product">
+			<div class="itembox livingroom"><img src="livingroom.jpg"></div>
+			<div class="itembox bedroom"><img src="bedroom.jpg"></div>
+			<div class="itembox kitchen"><img src="kitchen.jpg"></div>
+			<div class="itembox bathroom"><img src="bathroom.jpg"></div>
+			<div class="itembox livingroom"><img src="livingroom2.jpg"></div>
+			<div class="itembox bedroom"><img src="bedroom2.jpg"></div>
+			<div class="itembox kitchen"><img src="kitchen2.jpg"></div>
+			<div class="itembox bathroom"><img src="bathroom2.jpg"></div>
+			<div class="itembox livingroom"><img src="livingroom3.jpg"></div>
+			<div class="itembox bedroom"><img src="bedroom3.jpg"></div>
+			<div class="itembox kitchen"><img src="kitchen3.jpg"></div>
+			<div class="itembox bathroom"><img src="bathroom3.jpg"></div>
+			<div class="itembox livingroom"><img src="livingroom4.jpg"></div>
+			<div class="itembox bedroom"><img src="bedroom4.jpg"></div>
+			<div class="itembox kitchen"><img src="kitchen4.jpg"></div>
+			<div class="itembox bathroom"><img src="bathroom4.jpg"></div>
+			<div class="itembox livingroom"><img src="livingroom5.jpg"></div>
+			<div class="itembox bedroom"><img src="bedroom5.jpg"></div>
+			<div class="itembox kitchen"><img src="kitchen5.jpg"></div>
+			<div class="itembox bathroom"><img src="bathroom5.jpg"></div>
+		</div>
+	</section>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.list').click(function(){
+				const value = $(this).attr('data-filter');
+				if(value == 'all'){
+					$('.itembox').show(1000);
+				}
+				else{
+					$('.itembox').not('.'+value).hide(1000);
+					$('.itembox').filter('.'+value).show(1000);
+				}
+			})
+			$('.list').click(function(){
+				$(this).addClass('active').siblings().removeClass('active');
+			})
+		})
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
